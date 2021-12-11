@@ -1,0 +1,9 @@
+format: jb-book
+root: docs/intro.md
+parts:
+  - caption: Basics
+    chapters:
+    - file: docs/basics.md
+  - caption: References
+    chapters:
+    - file: docs/reference.md
