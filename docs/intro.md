@@ -1,4 +1,4 @@
-# Welcome to Recommender Engines
+# Welcome to Recommenders
 
 This book contains an introduction in recommendation engines in Python.  
 
