@@ -1,9 +1,9 @@
 format: jb-book
 root: docs/intro.md
 parts:
-  - caption: Basics
+  - caption: Introduction
     chapters:
-    - file: docs/basics.md
-  - caption: References
+    - file: docs/recommender-first-steps.md
+  - caption: Coding
     chapters:
-    - file: docs/reference.md
+    - file: docs/recommender-modules.md

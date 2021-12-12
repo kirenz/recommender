@@ -1,6 +1,8 @@
 # Welcome to Recommenders
 
-This book contains an introduction in recommendation engines in Python.  
+This book contains materials to get you started with recommendation systems in Python.  
+
+When you buy a product online, most websites automatically recommend other products that you may like. Recommender systems look at patterns of activities between different users and/or different products to produce these recommendations. 
 
 ---
 

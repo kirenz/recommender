@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to Recommenders &#8212; Introduction to Recommendation Engines</title>
+    <title>Python modules &#8212; Introduction to Recommendation Engines</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,7 +52,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Recommender tutorials" href="recommender-first-steps.html" />
+    <link rel="next" title="Bibliography" href="reference.html" />
+    <link rel="prev" title="Recommender tutorials" href="recommender-first-steps.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -87,8 +88,8 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    Welcome to Recommenders
   </a>
  </li>
@@ -110,10 +111,22 @@
   Coding
  </span>
 </p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Python modules
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="recommender-modules.html">
-   Python modules
+  <a class="reference internal" href="reference.html">
+   Bibliography
   </a>
  </li>
 </ul>
@@ -157,7 +170,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/docs/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/docs/recommender-modules.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -177,7 +190,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/kirenz/recommender/issues/new?title=Issue%20on%20page%20%2Fdocs/intro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/kirenz/recommender/issues/new?title=Issue%20on%20page%20%2Fdocs/recommender-modules.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -198,6 +211,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tensorflow-recommenders">
+   TensorFlow Recommenders
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lightfm">
+   LightFM
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#surprise">
+   Surprise
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -206,17 +242,33 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-recommenders">
-<h1>Welcome to Recommenders<a class="headerlink" href="#welcome-to-recommenders" title="Permalink to this headline">¶</a></h1>
-<p>This book contains materials to get you started with recommendation systems in Python.</p>
-<p>When you buy a product online, most websites automatically recommend other products that you may like. Recommender systems look at patterns of activities between different users and/or different products to produce these recommendations.</p>
-<hr class="docutils" />
-<p>This online work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.</p>
-<p><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br /></p>
-<p>This website is built with <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a>. <a target="_blank" href="https://icons8.de/icon/aL7NtSh6zELd/streudiagramm"> </a> Logo by <a target="_blank" href="https://icons8.de">Icons8</a></p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="python-modules">
+<h1>Python modules<a class="headerlink" href="#python-modules" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="tensorflow-recommenders">
+<h2>TensorFlow Recommenders<a class="headerlink" href="#tensorflow-recommenders" title="Permalink to this headline">¶</a></h2>
+<p>TensorFlow Recommenders (TFRS) is a library for building recommender system models.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.tensorflow.org/recommenders/examples/basic_ranking">Code example for ranking model</a> (code is explained in video below)</p></li>
+</ul>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jz0-satrmrA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<div class="toctree-wrapper compound">
+<div class="section" id="lightfm">
+<h2>LightFM<a class="headerlink" href="#lightfm" title="Permalink to this headline">¶</a></h2>
+<p>LightFM is a Python implementation of a number of popular recommendation algorithms for both implicit and explicit feedback.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://making.lyst.com/lightfm/docs/home.html">LightFM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/lyst/lightfm/blob/master/examples/quickstart/quickstart.ipynb">Quickstart notebook</a></p></li>
+<li><p><a class="reference external" href="https://making.lyst.com/lightfm/docs/examples.html">Code examples</a></p></li>
+</ul>
+</div>
+<div class="section" id="surprise">
+<h2>Surprise<a class="headerlink" href="#surprise" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/NicolasHug/Surprise">Surprise</a> is a Python module for building and analyzing recommender systems that deal with <strong>explicit</strong> rating data. It does not support <strong>implicit</strong> ratings or content-based information.</p>
+<p>The name SurPRISE stands for Simple Python RecommendatIon System Engine.</p>
+<ul class="simple">
+<li><p>Install the module and start with <a class="reference external" href="https://surprise.readthedocs.io/en/stable/getting_started.html">this tutorial</a></p></li>
+<li><p><a class="reference external" href="https://surprise.readthedocs.io/en/stable/FAQ.html">Here</a> is an example how to retrieve the top-10 items with highest rating prediction for each user.</p></li>
+</ul>
 </div>
 </div>
 
@@ -249,11 +301,20 @@
 
 <div class='prev-next-bottom'>
     
+    <div id="prev">
+        <a class="left-prev" href="recommender-first-steps.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Recommender tutorials</p>
+            </div>
+        </a>
+    </div>
      <div id="next">
-        <a class="right-next" href="recommender-first-steps.html" title="next page">
+        <a class="right-next" href="reference.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Recommender tutorials</p>
+                <p class="prevnext-title">Bibliography</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
