@@ -29,3 +29,10 @@ The name SurPRISE stands for Simple Python RecommendatIon System Engine.
 - Install the module and start with [this tutorial](https://surprise.readthedocs.io/en/stable/getting_started.html)
 
 - [Here](https://surprise.readthedocs.io/en/stable/FAQ.html) is an example how to retrieve the top-10 items with highest rating prediction for each user.
+
+## Microsoft recommenders
+
+The [Microsoft Recommenders repository](https://github.com/Microsoft/Recommenders) provides examples and best practices for building recommendation systems, provided as Jupyter notebooks:
+
+- [Microsoft Recommenders](https://microsoft-recommenders.readthedocs.io/en/latest/index.html)
+- [Setup Guide](https://github.com/microsoft/recommenders/blob/main/SETUP.md)
