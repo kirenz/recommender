@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recommender &#8212; Introduction to Recommendation Engines</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Recommendation Engines</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to Recommenders
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Introduction
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="recommender-first-steps.html">
+   Recommender tutorials
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Coding
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="recommender-modules.html">
+   Python modules
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="reference.html">
+   Bibliography
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/docs/intro-recommender.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/kirenz/recommender"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/kirenz/recommender/issues/new?title=Issue%20on%20page%20%2Fdocs/intro-recommender.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#techniken">
+   Techniken
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inhaltsbasiertes-filtern">
+     Inhaltsbasiertes Filtern
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kollaboratives-filtern">
+     Kollaboratives Filtern
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="recommender">
+<h1>Recommender<a class="headerlink" href="#recommender" title="Permalink to this headline">¶</a></h1>
+<p>Der Begriff des Recommender Systems oder auch Empfehlungssystem genannt (Klahold, 2009), taucht erstmalig im Jahr 1997 auf und wird von Resnick und Varian (1997) geprägt.</p>
+<p>Sie verstanden darunter ein System, welches Empfehlungen von Menschen aggregiert und diese anschließend an einen geeigneten Empfänger weiterleitet (Resnick &amp; Varian, 1997).</p>
+<p>Burke (2002) erweitert den Begriff und definiert Empfehlungsdienste wie folgt: „ […] any system that produces individualized recommendations as output or has the effect of guiding the user in a personalized way to interesting or useful objects in a large space of possible options” (Burke, 2002, S.331).</p>
+<p>Aus heutiger Sicht werden darunter Softwareanwendungen und –techniken verstanden, die einem Nutzer Objekte bzw. heutzutage alle Dinge des täglichen Lebens empfehlen (Gärtner, 2012). Für die Generierung von Empfehlungen setzen Empfehlungsdienste Ähnlichkeitsmetriken ein (Höhfeld &amp; Kwiatkowski, 2007).</p>
+<p>Die nachfolgende Abbildung 3 zeigt, wie Eingabedaten mittels einer Empfehlungskomponente, respektive einer Empfehlungstechnik in eine Objektausgabeliste umgewandelt werden.</p>
+<p>Eingabedaten könnten z.B. Benutzermodelle, Produktdaten oder Wissensmodelle sein. Die Objektausgabeliste setzt sich aus den einzelnen Objekten und deren Rang zusammen. Der Rang drückt dabei aus, wie nützlich ein Objekt für den jeweiligen Benutzer ist (Jannach, 2012).</p>
+<p>Formell lässt sich ein Recommender System wie folgt definieren: „[…] ein System, das einem Benutzer in einem gegebenen Kontext aus einer gegebenen Entitätsmenge aktiv eine Teilmenge ‚nützlicher‘ Elemente empfiehlt“ (Klahold, 2009, S.1).</p>
+<p>Der Kontext setzt sich dabei aus dem <strong>Benutzerprofil P</strong>, der <strong>Entitätsmenge M</strong> und der <strong>Situation S</strong> zusammen (Klahold, 2009). Die folgende Abbildung zeigt die Funktionsweise eines Empfehlungssystems auf.</p>
+<p>Das Benutzerprofil <em>P</em> beinhaltet sowohl <em>explizite</em> Informationen, wie z.B. Geschlecht oder Alter, als auch <em>implizite</em> Informationen, wie z.B. gelesene Texte oder gekaufte Produkte. Die Entitätsmenge <em>M</em> enthält die Elemente, die empfohlen werden können. Dies können beispielhaft Bücher oder Reisen sein. „Die Situation <em>S</em> konstituiert sich aus Rahmenparametern der realen Welt (Datum, Uhrzeit, Geoinformation, verwendetes Endgerät des Benutzers, gerade angezeigter Text im Browser des Benutzers etc.)“ (Klahold, 2009, S.1). Aus der Entitätsmenge <em>M</em> wird eine Teilmenge von Elementen <em>T</em> gebildet, welche dem Nutzer empfohlen werden und die den Nutzen des Benutzers <em>B</em> im gegebenen Kontext K maximieren sollen. Ziel des Empfehlungssystems ist es, die folgende Formel zu optimieren (Klahold, 2009):</p>
+<p>max(Nutzwert(B,K,T)) mit K = (P,M,S)</p>
+<p>Anders formuliert liegt das Ziel eines Recommender Systems darin, dem User individu-elle Inhalte, auch als Items bezeichnet, auf Basis seiner Bedürfnisse, Vorlieben und Inte-ressen zu empfehlen. Der Kunde soll auf für ihn relevante Produkt aufmerksam gemacht und zum Kauf angeregt werden (Höhfeld &amp; Kwiatkowski, 2007).</p>
+<div class="section" id="techniken">
+<h2>Techniken<a class="headerlink" href="#techniken" title="Permalink to this headline">¶</a></h2>
+<p>Ein Recommender System kann mittels verschiedener Ansätze, welche in diesem Kapitel erläutert werden, realisiert werden. Zusätzlich werden die Vor- und Nachteile der jeweiligen Techniken aufgezeigt.</p>
+<p>Die Ansätze setzten sich dabei aus dem inhaltsbasierten, kooperativen, demografischen, community-basierten und wissensbasierten Filtern sowie dem hybriden Verfahren zusammen.</p>
+<div class="section" id="inhaltsbasiertes-filtern">
+<h3>Inhaltsbasiertes Filtern<a class="headerlink" href="#inhaltsbasiertes-filtern" title="Permalink to this headline">¶</a></h3>
+<p>Das Verfahren „Information Retrieval”, bei dem es um das Bereitstellen von speziellen Informationen aus einer großen Menge von unsortierten Daten geht (Baeza-Yates &amp; Ribeiro-Neto, 2011), bildet die Grundlage für das inhaltsbasierte Filtern (Balabanović &amp; Shoham, 1997).</p>
+<p>Das inhaltsbasierte Filtern, auch <em>„content-based filtering“</em> genannt, bezieht sich auf die Objekt-zu-Objekt-Korrelation und versucht auf Basis von Objekten, welche dem Nutzer in der Vergangenheit gefallen haben oder welche er gekauft hat, ähnliche Objekte zu finden und diese dem Benutzer anschließend zu empfehlen (Burke, 2007).</p>
+<p>Als Quelle für die Empfehlungsgenerierung werden Artikel- und Benutzerbeschreibungen herangezogen. Die Benutzerbeschreibungen beinhalten die Präferenzen und Interessen des Nutzers (Gemmis, Lops, Musto, Narducci &amp; Semeraro, 2015), welche z.B. durch Ratings oder Kaufverhalten ausgedrückt werden können (Aggarwal, 2016), während die Artikelbeschreibungen die Merkmale des Produktes enthalten.</p>
+<p>Zur Erstellung einer Empfehlung werden beide Beschreibungen miteinander abgeglichen und die Relevanz eines Produktes für den Kunden wird berechnet (Gemmis et al., 2015).</p>
+<p>Zur Bestimmung der Ähnlichkeit können verschiedene Distanzmaße herangezogen werden, wie z.B. das Cosinus-Ähnlichkeitsmaß (Cosine Similarity), der Pearson Korrelationskoeffizient, der Jaccard-Koeffizient, der euklidische Abstand oder das Nearest Neighbours-Verfahren (Klahold, 2009).</p>
+<p>Ein Beispiel für Empfehlungssysteme, welche auf Basis des inhaltsbasierten Ansatzes arbeiten, sind Systeme, die Nachrichtenartikel empfehlen, indem sie Schlüsselwörter aus einem Artikel, welcher der Kunde zuvor bewertet hat, mit den Schlüsselwörtern anderer Artikel vergleichen respektive abgleichen (Gärtner, 2012).</p>
+<p>Ein Vorteil der inhaltsbasierten Empfehlungstechnik ist, dass sie vollkommen unabhängig von anderen Nutzern ist und die Empfehlung nur auf Basis der eigenen Interessen generiert wird. Des Weiteren ist die transparente Arbeitsweise ein Vorteil, da durch den Abgleich der Benutzer- und Produktbeschreibungen aufgezeigt werden kann, warum der jeweilige Artikel empfohlen wird. Dies führt dazu, dass das Vertrauen gegenüber dem Anwender erhöht werden kann. Ein weiterer Vorteil dieser Technik ist, dass dem Kunden auch neue Objekte empfohlen werden können, da die notwendigen Informationen aus der Produktbeschreibung herangezogen werden (Gärtner, 2012).</p>
+<p>Den Vorteilen stehen jedoch auch Nachteile gegenüber. So können neue Objekte nur empfohlen werden, wenn sie bereits ausreichend beschrieben wurden. Diese Problematik betrifft vor allem komplexe Objekte wie z.B. Bilder.</p>
+<p>Anders als neue Objekte, stellen vor allem neue Nutzer die Technik vor Probleme, dabei wird auch vom <em>„Kaltstartproblem“</em> gesprochen. Sind nicht ausreichend Informationen über den Benutzer oder das Objekt vorhanden, z.B. da der Nutzer oder das Produkt neu ist, so wird entweder keine Empfehlung generiert oder eine sehr ungenaue.</p>
+<p>Das Kaltstartproblem bezieht sich sowohl auf neue Benutzer als auch auf neue Objekte. Für das inhaltsbasierte Filtern stellen allerdings, wie bereits erwähnt, nur neue Kunden ein Problem dar, da für die Erstellung einer Empfehlung die Nutzerdaten essenziell sind (Burke, 2007). Sind diese bei neuen Kunden nicht vorhanden, so gestaltet sich die Suche nach ähnlichen Produkten sehr schwierig.</p>
+<p>Eine weitere Problematik stellt das <em>„Serendipity-Problem“</em>, auch bekannt als Glücks- oder Zufallsproblem, dar. Darunter zu verstehen ist, dass dem Anwender keine unerwarteten Objekte aufgezeigt werden, sondern nur Objekte basierend auf dem vorhandenen Wissen (Gärtner, 2012).</p>
+<p>Neben den vorgestellten Nachteilen stellt das <em>„Stability-vs-Plasticity“-Problem</em> einen weiteren Nachteil dar, bei dem es darum geht, dass das Benutzerprofil, welches zu Beginn erstellt wird im Nachhinein nur schwer veränderbar ist (Burke, 2002). Burke (2002) beschreibt das Ganze anhand eines Beispiels wie folgt: „A steak-eater who becomes a vegetarian will continue to get steakhouse recommendations from a content-based or collaborative recommender for some time, until newer ratings have the chance to tip the scales” (Burke, 2002, S.338f).</p>
+</div>
+<div class="section" id="kollaboratives-filtern">
+<h3>Kollaboratives Filtern<a class="headerlink" href="#kollaboratives-filtern" title="Permalink to this headline">¶</a></h3>
+<p>Das kollaborative Filtern, im Englischen als <em>„collaborative filtering“</em> bezeichnet, ist der bekannteste, am weitesten verbreitete und ausgereifteste Ansatz (Burke, 2002).</p>
+<p>Anders als beim inhaltsbasierten Filtern werden keine Korrelationen zwischen den Objekten gesucht, sondern zwischen den Nutzern, weshalb dabei auch von der „Mensch-zu-Mensch-Korrelation“ gesprochen wird (Burke, 2007).</p>
+<p>Anstatt Artikel zu empfehlen, weil sie dem Benutzer in der Vergangenheit gefallen haben, werden Artikel empfohlen, die ähnlichen Nutzern gefallen haben. Dafür wird nicht wie bei dem inhaltsbasierten Filtern die Ähnlichkeit zwischen Produkten berechnet, sondern die Ähnlichkeit zwischen Benutzer (Balabanović &amp; Shoham, 1997).</p>
+<p>Um die Ähnlichkeit zwischen Nutzern berechnen zu können, werden die einzelnen Interessen der Nutzer in Profilen gespeichert. Das Interesse der Nutzer an einem Produkt wird anhand der Produktbewertung repräsentiert (Pazzani, 1999). Die Produktbewertung kann über verschiedene Wege erfolgen, wie z.B. numerisch über eine Skala, die sich über eine beliebige Größe erstreckt oder binär, indem die Bewertung entweder positiv (z.B. „mag ich“) oder negativ (z.B. „mag ich nicht“) ist (Aggarwal, 2016). Die nachfolgende Abbildung 6 veranschaulicht die Funktionsweise des kollaborativen Filterns.</p>
+<p>Der Ansatz des kollaborativen Filterns kann über zwei Wege realisiert werden. Zum einen über das <em>Memory-based collaborative Filtering</em> und zum anderen über das <em>Model-based collaborative Filtering</em> (Aggarwal, 2016).</p>
+<p><em>Memory-based collaborative Filtering</em></p>
+<p>Ersteres basiert darauf, dass Nutzer, die ein ähnliches Interesse haben, Items annähernd identisch bewerten werden. Mit dieser Annahme können anschließend Interessen bestimmt und Items dem entsprechenden Nutzer empfohlen werden. Zur Bestimmung der Nachbarschaft zwischen den Bewertungen können zwei Methoden angewendet werden.</p>
+<p>Die erste Methode ist der <em>User-based</em> Ansatz, bei dem der Nutzer im Mittelpunkt steht. Dabei wird davon ausgegangen, dass ähnliche Nutzer vergleichbare Bewertungen abgeben.</p>
+<p>Der zweite Ansatz ist die Item-based Methode, bei der anders als bei der User-based Methode das Produkt im Mittelpunkt steht. Hierbei werden die Ratings eines Kunden genutzt, um Ähnlichkeiten zwischen den Produkten, die der Nutzer in der Vergangenheit bewertet hat, zu bestimmen und anschließend ähnliche Produkte zu empfehlen. Gefallen beispielsweise zwei Produkte denselben Nutzern, so wird davon ausgegangen, dass sie sich ähnlich sind.</p>
+<p>Für die Berechnung werden kosinus- oder korrelationsbasierte Ähnlichkeitsmaße verwendet, die direkt auf die zur Verfügung stehenden Daten angewendet werden (Höhfeld &amp; Kwiatkowski, 2007).</p>
+<p><em>Model-based collaborative Filtering</em></p>
+<p>Das Model-based collaborative Filtering verwendet Data Mining und Machine Learning Modelle, um Vorhersagen zu treffen (Aggarwal, 2016). „Bei der modellbasierten Variante hingegen wird offline ein Modell gelernt, auf das dann online zurückgegriffen werden kann. Es muss nicht mehr die komplette Datenmatrix aufgerufen werden. Bei dieser Form werden u.a. Techniken, wie die Neuronalen Netzwerke, die Latente Semantische Analyse, die Clusteranalyse oder die Bayesschen Netzwerke eingesetzt“ (Höhfeld &amp; Kwiatkowski, 2007, S.267).</p>
+<p>Vorteile des collaborative Filtering sind zum einen, dass kein branchenspezifisches Wissen benötigt wird, da die Empfehlung auf Basis ähnlicher Benutzerprofile generiert wird und nicht aus den Eigenschaften der Objekte.</p>
+<p>Zum anderen werden keine expliziten Daten benötigt, da das System implizite Daten aus der Nutzerbeobachtung gewinnt (Burke, 2007). Des Weiteren liefert das kollaborative Filtern den Vorteil, dass die Technik Empfehlungen auch „outside the box“ generiert, d.h. dem Anwender werden neue Objekte aufgezeigt, auf die er eventuell nicht von selbst aufmerksam geworden wäre.</p>
+<p>Durch den Einsatz von Machine Learning Algorithmen hat der Ansatz des kollaborativen Filterns den Vorteil, dass das ganze System lernfähig ist und mit voranschreitender Zeit die Qualität der Empfehlung verbessern kann (Burke, 2002).</p>
+<p>Wie beim inhaltsbasierten Ansatz stellt das <em>Kaltstartproblem</em> auch beim kollaborativen Ansatz ein wesentliches Problem dar. Jedoch stellen in diesem Fall sowohl neue Nutzer als auch neue Objekte die Technik vor Probleme.</p>
+<p>Auf der einen Seite werden für die Generierung Bewertungen für neue Objekte benötigt und auf der anderen Seite Informationen über den Benutzer, um Ähnlichkeiten zu anderen Nutzern zu ermitteln. Diese Informationen sind zu Beginn des Systems nicht vorhanden und deshalb können keine Ähnlichkeiten berechnet werden.</p>
+<p>Neben dem Kaltstartproblem stellt das <em>„Grey-Sheep“-Problem</em> eine weitere Problematik dar. Unter den ‚grauen Schafen‘ sind Nutzer zu verstehen die nicht genau in eine Benutzergruppe fallen, sondern sich zwischen verschiedenen Benutzergruppen bewegen (Burke, 2002).</p>
+<p>Ebenso trifft auch das <em>„Stability-vs-Plasticity“-Problem</em> bei diesem Ansatz zu. Um kollaborative Empfehlungssysteme effizient nutzen zu können, wird eine angemessene Anzahl von Daten benötigt. Diese darf einerseits nicht zu klein sein, da sonst keine Empfehlungen generiert werden können, aber anderseits auch nicht zu groß, da ansonsten sowohl die Memory-based- als auch die Model-based-Methode an ihre Grenzen stoßen (Gärtner, 2012).</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Jan Kirenz<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
